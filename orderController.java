@@ -4,7 +4,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-public class orderController {
+public class orderController 
+{
 
     @FXML
     private ListView<?> Checkout;
@@ -28,22 +29,26 @@ public class orderController {
     private Button saveOrder;
 
     @FXML
-    void ClearCart(ActionEvent event) {
+    void ClearCart(ActionEvent event) 
+    {
 
     }
 
     @FXML
-    void DupeOrder(ActionEvent event) {
+    void DupeOrder(ActionEvent event) 
+    {
 
     }
 
     @FXML
-    void backToMenu(ActionEvent event) {
+    void backToMenu(ActionEvent event) 
+    {
 
     }
 
     @FXML
-    void exportOrder(ActionEvent event) {
+    void exportOrder(ActionEvent event) 
+    {
 
     }
 

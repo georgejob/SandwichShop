@@ -10,28 +10,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.menuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menuController">
    <children>
       <ComboBox fx:id="SandwichBox" layoutX="31.0" layoutY="58.0" onAction="#sandwichChooser" prefWidth="150.0" />
-      <ListView fx:id="setIngredients" layoutX="197.0" layoutY="58.0" prefHeight="100.0" prefWidth="134.0" />
-      <Text layoutX="59.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sandwich type" />
-      <Text layoutX="197.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredients included" wrappingWidth="194.53662109375" />
-      <ImageView fx:id="imageChooser" fitHeight="106.0" fitWidth="166.0" layoutX="176.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+      <ListView fx:id="setIngredients" layoutX="207.0" layoutY="51.0" prefHeight="113.0" prefWidth="114.0" />
+      <Text layoutX="66.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sandwich type" />
+      <Text layoutX="214.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set ingredients" wrappingWidth="121.59999999999991" />
+      <ImageView fx:id="imageChooser" fitHeight="106.0" fitWidth="166.0" layoutX="376.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@src/application/1200px-RedDot_Burger.jpg" />
+            <Image url="@burger3.jpg" />
          </image>
       </ImageView>
-      <ListView fx:id="ingredientList" layoutX="35.0" layoutY="236.0" prefHeight="200.0" prefWidth="139.0" />
-      <Button fx:id="addButton" layoutX="215.0" layoutY="240.0" mnemonicParsing="false" onAction="#addToList" prefHeight="26.0" prefWidth="59.0" text="Add" />
-      <Button fx:id="removeButton" layoutX="216.0" layoutY="286.0" mnemonicParsing="false" onAction="#removeFromList" text="Remove" />
-      <Button fx:id="clearButton" layoutX="216.0" layoutY="330.0" mnemonicParsing="false" onAction="#clearList" prefHeight="26.0" prefWidth="59.0" text="Clear" />
-      <ListView fx:id="addedIngredients" layoutX="308.0" layoutY="236.0" prefHeight="200.0" prefWidth="139.0" />
-      <TextField fx:id="totalPrice" layoutX="459.0" layoutY="252.0" prefHeight="26.0" prefWidth="121.0" />
-      <Button fx:id="buyButton" layoutX="478.0" layoutY="299.0" mnemonicParsing="false" onAction="#addToOrder" text="Add to Order" />
-      <Button fx:id="exportOrder" layoutX="476.0" layoutY="330.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" text="Show Order" />
-      <Text layoutX="35.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredient Selections" />
-      <Text layoutX="327.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Extra Ingredients" />
-      <Text layoutX="509.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" />
-      <TextArea fx:id="orderPrint" layoutX="25.0" layoutY="500.0" prefHeight="100.0" prefWidth="600.0" />
+      <ListView fx:id="ingredientList" layoutX="35.0" layoutY="186.0" prefHeight="294.0" prefWidth="139.0" />
+      <Button fx:id="addButton" layoutX="215.0" layoutY="265.0" mnemonicParsing="false" onAction="#addToList" prefHeight="26.0" prefWidth="59.0" text="Add" />
+      <Button fx:id="removeButton" layoutX="215.0" layoutY="333.0" mnemonicParsing="false" onAction="#removeFromList" text="Remove" />
+      <Button fx:id="clearButton" layoutX="215.0" layoutY="401.0" mnemonicParsing="false" onAction="#clearList" prefHeight="26.0" prefWidth="59.0" text="Clear" />
+      <ListView fx:id="addedIngredients" layoutX="308.0" layoutY="186.0" prefHeight="294.0" prefWidth="139.0" />
+      <TextField fx:id="totalPrice" layoutX="458.0" layoutY="265.0" prefHeight="26.0" prefWidth="121.0" />
+      <Button fx:id="buyButton" layoutX="476.0" layoutY="333.0" mnemonicParsing="false" onAction="#addToOrder" text="Add to Order" />
+      <Button fx:id="exportOrder" layoutX="476.0" layoutY="401.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" text="Show Order" />
+      <Text layoutX="55.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingreditent choices" />
+      <Text layoutX="327.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Added Ingredients" />
+      <Text layoutX="506.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" />
+      <TextArea fx:id="orderPrint" layoutY="500.0" prefHeight="100.0" prefWidth="600.0" />
    </children>
 </AnchorPane>

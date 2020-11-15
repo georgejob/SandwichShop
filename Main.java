@@ -27,11 +27,20 @@ public class Main extends Application
 	@Override
 	public void start(Stage stage) throws Exception
 	{
-		try {			
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("menuController.fxml"));
-			Scene scene = new Scene(root, 600, 500);
-			AnchorPane root2 = (AnchorPane)FXMLLoader.load(getClass().getResource("order.fxml"));
-			Scene scene2 = new Scene(root2, 600, 500);
+		try 
+		{			
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("menuController.fxml"));
+			AnchorPane root = (AnchorPane) loader.load();
+			
+			menuController menu = loader.getController();
+			
+			menu.initialize();
+			
+			Scene scene = new Scene(root, 600, 600);
+			//menuController menu = loader.getController();
+			//AnchorPane root2 = (AnchorPane)FXMLLoader.load(getClass().getResource("order.fxml"));
+			//Scene scene2 = new Scene(root2, 600, 500);
 			stage.setTitle("Sandwich Shop");
 			stage.setScene(scene);
 			//stage.setScene(scene2);

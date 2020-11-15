@@ -7,10 +7,11 @@ public abstract class Sandwich implements Customizable
 	protected ArrayList<Extra> extras;
 	
 	public abstract double price();
-	public String toString()
-	{
+	
+	//public String toString()
+	//{
 		
-	}
+	//}
 	
 
 }
