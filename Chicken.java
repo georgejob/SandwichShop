@@ -1,9 +1,10 @@
+import java.util.ArrayList;
 
 public class Chicken extends Sandwich{
 	
 	public Chicken()
 	{
-		
+		extras = new ArrayList<Extra>();
 	}
 
 	@Override
@@ -18,7 +19,7 @@ public class Chicken extends Sandwich{
 
 	@Override
 	public double price() {
-		return 8.99;
+		return 8.99 + (1.99 * extras.size());
 	}
 
 }

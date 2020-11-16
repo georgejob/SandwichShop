@@ -1,4 +1,5 @@
 import java.io.File;
+import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -44,7 +45,7 @@ public class menuController {
 
 	@FXML
 	private ListView<String> ingredientList;
-	private ObservableList<String> fullList = FXCollections.observableArrayList("Lettuce", "Tomato", "Onions", "Bacon", "Pickles", "Musrooms", "Swiss", "American", "Spinach", "Cheddar");
+	private ObservableList<String> fullList = FXCollections.observableArrayList("Lettuce", "Tomato", "Onions", "Bacon", "Pickles", "Mushrooms", "Swiss", "American", "Spinach", "Cheddar");
 
 	@FXML
 	private Button addButton;
@@ -81,10 +82,64 @@ public class menuController {
 		
 		if(ingredientList.getSelectionModel().getSelectedItem() != null && counter <6)
 		{
+			if(ingredientList.getSelectionModel().getSelectedItem().equals("Lettuce"))
+			{
+				currentSandwich.extras.add(Extra.Lettuce);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(ingredientList.getSelectionModel().getSelectedItem().equals("Tomato"))
+			{
+				currentSandwich.extras.add(Extra.Tomato);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(ingredientList.getSelectionModel().getSelectedItem().equals("Onions"))
+			{
+				currentSandwich.extras.add(Extra.Onions);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(ingredientList.getSelectionModel().getSelectedItem().equals("Bacon"))
+			{
+				currentSandwich.extras.add(Extra.Bacon);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(ingredientList.getSelectionModel().getSelectedItem().equals("Pickles"))
+			{
+				currentSandwich.extras.add(Extra.Pickles);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(ingredientList.getSelectionModel().getSelectedItem().equals("Mushrooms"))
+			{
+				currentSandwich.extras.add(Extra.Mushrooms);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(ingredientList.getSelectionModel().getSelectedItem().equals("Swiss"))
+			{
+				currentSandwich.extras.add(Extra.Swiss);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(ingredientList.getSelectionModel().getSelectedItem().equals("American"))
+			{
+				currentSandwich.extras.add(Extra.American);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(ingredientList.getSelectionModel().getSelectedItem().equals("Spinach"))
+			{
+				currentSandwich.extras.add(Extra.Spinach);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(ingredientList.getSelectionModel().getSelectedItem().equals("Cheddar"))
+			{
+				currentSandwich.extras.add(Extra.Cheddar);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			
 			addList.add(ingredientList.getSelectionModel().getSelectedItem());
 			counter++;
 			fullList.remove(ingredientList.getSelectionModel().getSelectedItem());
 			addedIngredients.setItems(addList);
+			
+			
+			
 		}
 		
 		
@@ -110,7 +165,9 @@ public class menuController {
 		ingredientList.setItems(fullList);
 		//SandwichBox.setValue(null);;
 		counter = 0;
-
+		
+		currentSandwich.extras = new ArrayList<Extra>();
+		totalPrice.setText(String.valueOf(currentSandwich.price()));
 	}
 
 	@FXML
@@ -118,6 +175,58 @@ public class menuController {
 	{
 		if(addedIngredients.getSelectionModel().getSelectedItem() != null)
 		{
+			if(addedIngredients.getSelectionModel().getSelectedItem().equals("Lettuce"))
+			{
+				currentSandwich.extras.remove(Extra.Lettuce);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(addedIngredients.getSelectionModel().getSelectedItem().equals("Tomato"))
+			{
+				currentSandwich.extras.remove(Extra.Tomato);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(addedIngredients.getSelectionModel().getSelectedItem().equals("Onions"))
+			{
+				currentSandwich.extras.remove(Extra.Onions);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(addedIngredients.getSelectionModel().getSelectedItem().equals("Bacon"))
+			{
+				currentSandwich.extras.remove(Extra.Bacon);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(addedIngredients.getSelectionModel().getSelectedItem().equals("Pickles"))
+			{
+				currentSandwich.extras.remove(Extra.Pickles);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(addedIngredients.getSelectionModel().getSelectedItem().equals("Mushrooms"))
+			{
+				currentSandwich.extras.remove(Extra.Mushrooms);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(addedIngredients.getSelectionModel().getSelectedItem().equals("Swiss"))
+			{
+				currentSandwich.extras.remove(Extra.Swiss);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(addedIngredients.getSelectionModel().getSelectedItem().equals("American"))
+			{
+				currentSandwich.extras.remove(Extra.American);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(addedIngredients.getSelectionModel().getSelectedItem().equals("Spinach"))
+			{
+				currentSandwich.extras.remove(Extra.Spinach);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			else if(addedIngredients.getSelectionModel().getSelectedItem().equals("Cheddar"))
+			{
+				currentSandwich.extras.remove(Extra.Cheddar);
+				totalPrice.setText(String.valueOf(currentSandwich.price()));
+			}
+			
+			
 			fullList.add(addedIngredients.getSelectionModel().getSelectedItem());
 			addList.remove(addedIngredients.getSelectionModel().getSelectedItem());
 			counter --;
@@ -137,6 +246,8 @@ public class menuController {
 			setIngredients.setItems(BurgerList);
 			Image burgerImage = new Image("burger3.jpg");
 			imageChooser.setImage(burgerImage);
+			
+			totalPrice.setText(String.valueOf(currentSandwich.price()));
 		}
 		if (SandwichBox.getValue() == "Chicken") 
 		{
@@ -145,6 +256,8 @@ public class menuController {
 			Image chickenImage = new Image("popeyes.jpg");
 			imageChooser.setImage(chickenImage);
 			//imageChooser.setImage(image);
+			
+			totalPrice.setText(String.valueOf(currentSandwich.price()));
 		}
 		if (SandwichBox.getValue() == "Fish") 
 		{
@@ -153,6 +266,8 @@ public class menuController {
 			Image fishImage = new Image("fillet.jpg");
 			imageChooser.setImage(fishImage);
 			//imageChooser.setImage(image);
+			
+			totalPrice.setText(String.valueOf(currentSandwich.price()));
 		}
 	}
 
@@ -176,6 +291,7 @@ public class menuController {
 		
 		currentSandwich = new Chicken();
 		totalPrice.setText(String.valueOf(currentSandwich.price()));
+		
 		
 		//currentOrderLine = new OrderLine(0, currentSandwich, currentSandwich.price());
 	}
