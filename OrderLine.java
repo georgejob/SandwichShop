@@ -27,4 +27,44 @@ public class OrderLine
 	{
 		price += amount;
 	}
+	
+	public String toString()
+	{
+		String line = Integer.toString(lineNumber);
+		if(sandwich.getClass().getName().equals("Chicken"))
+		{
+			line += " Chicken Sandwich: Fried Chicken, Mayo, Pickles, ";
+		}
+		else if(sandwich.getClass().getName().equals("Beef"))
+		{
+			line += " Burger Sandwich: Beef Patty, Bun, Ketchup, ";
+		}
+		else if(sandwich.getClass().getName().equals("Fish"))
+		{
+			line += " Fish Sandwich: Fried Cod, TarTar, Lettuce, ";
+		}
+		
+		if(sandwich.extras.size() > 0)
+		{
+			line += "Extras: ";
+			for(Extra e : sandwich.extras)
+			{
+				line += e + ", ";
+			}
+		}
+		
+		line += "Price: $" + sandwich.price();
+		
+		return line;
+	}
+	
+	public double getPrice()
+	{
+		return price;
+	}
+	
+	public Sandwich getSandwich()
+	{
+		return sandwich;
+	}
 }

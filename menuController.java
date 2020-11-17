@@ -5,6 +5,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
@@ -12,6 +14,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class menuController {
 	
@@ -148,12 +152,18 @@ public class menuController {
 	@FXML
 	void addToOrder(ActionEvent event) 
 	{
-		SandwichBox.getSelectionModel().selectFirst();
+		//SandwichBox.getSelectionModel().selectFirst();
 		fullList.addAll(addList);
 		addList.removeAll(addList);
 		addedIngredients.setItems(addList);
 		ingredientList.setItems(fullList);
 		counter = 0;
+		
+		currentOrderLine = new OrderLine(0, currentSandwich, currentSandwich.price());
+		currentOrder.add(currentOrderLine);
+		
+		//currentSandwich = new Chicken();
+		//totalPrice.setText(String.valueOf(currentSandwich.price()));
 	}
 
 	@FXML
@@ -268,6 +278,33 @@ public class menuController {
 			//imageChooser.setImage(image);
 			
 			totalPrice.setText(String.valueOf(currentSandwich.price()));
+		}
+	}
+	
+	@FXML
+	void showOrderDetails(ActionEvent event)
+	{
+		try 
+		{			
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("order.fxml"));
+			AnchorPane root = (AnchorPane) loader.load();
+			
+			orderController menu = loader.getController();
+			
+			menu.initialize(currentOrder);
+			
+			Scene scene = new Scene(root, 600, 600);
+			
+			Stage stage = new Stage();
+			stage.setTitle("Order Summary");
+			stage.setScene(scene);
+			stage.setScene(scene);
+			stage.show();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
 		}
 	}
 

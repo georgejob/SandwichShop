@@ -11,7 +11,7 @@
       <ListView fx:id="Checkout" layoutX="-1.0" layoutY="-2.0" prefHeight="298.0" prefWidth="600.0" />
       <Button fx:id="ClearButton" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#ClearCart" text="Clear Order" />
       <Button fx:id="DupeButton" layoutX="14.0" layoutY="316.0" mnemonicParsing="false" onAction="#DupeOrder" text="Add Same Order" />
-      <Button fx:id="removeButton" layoutX="142.0" layoutY="316.0" mnemonicParsing="false" text="remove Order" />
+      <Button fx:id="removeButton" layoutX="142.0" layoutY="316.0" mnemonicParsing="false" onAction="#removeOrder" text="remove Order" />
       <Button fx:id="backButton" layoutX="146.0" layoutY="355.0" mnemonicParsing="false" onAction="#backToMenu" text="Back" />
       <Text layoutX="362.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total price $" wrappingWidth="74.0347900390625" />
       <TextField fx:id="finalPrice" layoutX="437.0" layoutY="315.0" />

@@ -31,7 +31,27 @@ public class Order implements Customizable
 	public boolean remove(Object obj) 
 	{
 		// TODO Auto-generated method stub
-		return false;
+		OrderLine temp = (OrderLine) obj;
+		if(orderlines.remove(temp))
+		{
+			lineNumber--;
+			
+			int i=1;
+			for(OrderLine or : orderlines)
+			{
+				if(or != null)
+				{
+					or.setLineNumber(i);
+					i++;
+				}
+			}
+			
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 }
